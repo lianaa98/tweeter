@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -15,11 +18,33 @@ html {
  */
 
 body {
-  color: #545149;
+  color: #4056A1;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+header {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 120px;
+  height: padding-top + 400px;
+  background-color: #9b9fb5a0;
+  background-image: url("../images/plaid.png");
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #f4f1ec;
+  color: #4056A1;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+}
