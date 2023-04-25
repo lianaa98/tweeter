@@ -1,3 +1,43 @@
 .new-tweet {
-  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.new-tweet > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.new-tweet > form > label {
+  color: #3a3b43;
+  font-size: 0.65em;
+}
+
+.new-tweet > form > textarea {
+  /* outline: none;
+  font-size: 0.65em;
+  line-height: 0.65em; */
+}
+
+.new-tweet > form > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.new-tweet > form > div > button {
+  background-color: #4056A1;
+  border: none;
+  margin-top: 1rem;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-family: Bungee;
+  font-size: 0.65em;
+  color: #FFFFFF;
 }

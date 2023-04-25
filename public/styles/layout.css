@@ -40,7 +40,7 @@ header {
 
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   background-color: #f4f1ec;
   color: #4056A1;
   height: 100%;

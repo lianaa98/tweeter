@@ -1,0 +1,35 @@
+article {
+  margin-top: 2rem;
+  border-style: solid;
+  border-color: #3a3b43;
+  color: #3a3b43;
+}
+
+.all-tweets {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.tweet-account {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tweet-account > div {
+  display: flex;
+  flex-grow: 1;
+}
+
+.account-id {
+  display: flex;
+  color:#3a3b43;
+  opacity: 0.3;
+}
+
+.tweet-stat {
+  display: flex;
+  justify-content: space-between;
+}
