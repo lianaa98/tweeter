@@ -1,8 +1,4 @@
-// jQuery
-
 $(document).ready(() => {
-  console.log("This document is ready.");
-
   /*  monitoring the input character length
   if character length > 140, appear negative value */
   function updateCharLength(charLength) {

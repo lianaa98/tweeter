@@ -19,13 +19,36 @@
 
 }
 
-.new-tweet > form > textarea {
+#tweet-text {
   border: none;
   resize: none;
   outline: none;
   border-bottom: #3a3b43;
   border-bottom-style: solid;
   background-color: transparent;
+}
+
+.warning {
+  display: none;
+  align-items: center;
+  flex-grow: 2;
+  padding-top: 0.25em;
+  padding-left: 3em;
+}
+
+.warn-box {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  border-top: 0.2em;
+  padding: 0.3em;
+  background-color: #D1B1C8;
+  border-radius: 5px;
+}
+
+.warn-box > span {
+  color: #813a6d;
+  font-size: 0.8em;
 }
 
 .new-tweet > form > div {

@@ -1,28 +1,38 @@
 $(document).ready(function() {
-  console.log("READY!");
   loadTweets();
   $("#tweet-form").on("submit", function(event) {
     event.preventDefault();
 
+    $("#tweet-text").css("background-color", "transparent");
+    $(".warning").slideUp();
+    $("#warn-text").text("");
     const text = $("#tweet-text").val();
     if (text.length > 140) {
-      alert("Characters exceeded 140!");
-    } else if (text === null) {
-      alert("Please input your tweet!");
+      $("#tweet-text").css("background-color", "#d1b1c879");
+      $(".warning").slideDown();
+      $("#warn-text").text("Oops! Your tweet is too long!");
+    } else if (text === "") {
+      $("#tweet-text").css("background-color", "#d1b1c879");
+      $(".warning").slideDown();
+      $("#warn-text").text("You have to tweet something");
     } else {
-    $.ajax({
-      type: "POST",
-      url: "/tweets/",
-      data: $(this).serialize(),
-    }).then(function() {
-      loadTweets();
-    });
-  }
+      $.ajax({
+        type: "POST",
+        url: "/tweets/",
+        data: $(this).serialize(),
+      }).then(function() {
+        loadTweets();
+        $("#tweet-text").val("");
+        $(".counter").text(140);
+      });
+    }
   });
 });
 
 
-
+// =============================================
+// ||  Helper functions to render all tweets  ||
+// =============================================
 function createTweetElement(tweetObj) {
   const username = tweetObj.user.name;
   const userAvatar = tweetObj.user.avatars;
@@ -59,6 +69,7 @@ function createTweetElement(tweetObj) {
 }
 
 function renderTweets(tweets) {
+  $(".all-tweets").empty();
 
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
@@ -71,7 +82,6 @@ function loadTweets() {
   $.ajax("/tweets/", { method: "GET" })
     .then(function(tweets) {
 
-      $(".all-tweets").empty();
       renderTweets(tweets);
 
       $(".icons").children().each(function() {

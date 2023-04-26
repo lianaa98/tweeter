@@ -54,3 +54,7 @@ article:hover {
 .icons > i {
   padding-right: 0.3em;
 }
+
+.icons > i:hover {
+  color: pink;
+}
