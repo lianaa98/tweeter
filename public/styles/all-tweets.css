@@ -3,6 +3,7 @@ article {
   border-style: solid;
   border-color: #3a3b43;
   color: #3a3b43;
+  padding: 1.5%;
 }
 
 article:hover {
@@ -34,9 +35,14 @@ article:hover {
   padding-right: 0.5em;
 }
 
+.tweet-text {
+  padding-top: 1%;
+  border-bottom-style: solid;
+}
 .tweet-stat {
   display: flex;
   justify-content: space-between;
+  padding-top: 1%;
 }
 
 .icons {

@@ -2,14 +2,22 @@ $(document).ready(function() {
   console.log("READY!");
   loadTweets();
   $("#tweet-form").on("submit", function(event) {
+    event.preventDefault();
+
+    const text = $("#tweet-text").val();
+    if (text.length > 140) {
+      alert("Characters exceeded 140!");
+    } else if (text === null) {
+      alert("Please input your tweet!");
+    } else {
     $.ajax({
       type: "POST",
       url: "/tweets/",
       data: $(this).serialize(),
-    }).done(function() {
+    }).then(function() {
       loadTweets();
     });
-    event.preventDefault();
+  }
   });
 });
 
@@ -32,7 +40,7 @@ function createTweetElement(tweetObj) {
     </div>
     <div class="tweet-text">${content}</div>
     <div class="tweet-stat">
-      <div class="date">${contentTime}</div>
+      <div class="timeago">${timeago.format(contentTime)}</div>
       <div class="icons">
         <i class="fa-regular fa-heart"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -41,13 +49,16 @@ function createTweetElement(tweetObj) {
     </div>
   </article>`;
 
+
+
   return markup;
 }
 
 function renderTweets(tweets) {
-  for (let i = tweets.length - 1; i >= 0; i--) {
-    const $tweet = createTweetElement(tweets[i]);
-    $(".all-tweets").append($tweet);
+
+  for (const tweet of tweets) {
+    const $tweet = createTweetElement(tweet);
+    $(".all-tweets").prepend($tweet);
   }
 }
 

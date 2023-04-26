@@ -10,17 +10,22 @@
   flex-direction: column;
   width: 100%;
   justify-content: space-evenly;
+  padding: 1.5%;
 }
 
 .new-tweet > form > label {
   color: #3a3b43;
-  font-size: 0.65em;
+  font-size: 0.8em;
+
 }
 
 .new-tweet > form > textarea {
-  /* outline: none;
-  font-size: 0.65em;
-  line-height: 0.65em; */
+  border: none;
+  resize: none;
+  outline: none;
+  border-bottom: #3a3b43;
+  border-bottom-style: solid;
+  background-color: transparent;
 }
 
 .new-tweet > form > div {
@@ -42,6 +47,9 @@
   color: #FFFFFF;
 }
 
+#tweet-button:hover {
+  box-shadow: #5675da8b 0px 0px 5px 5px;
+}
 .counter {
   font-family: Bungee;
   margin-top: 1rem;

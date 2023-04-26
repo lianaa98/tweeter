@@ -17,6 +17,8 @@ $(document).ready(() => {
 
     if (charLimit < 0) {
       count.css("color", "red");
+    } else {
+      count.css("color", "#4056A1");
     }
   });
 });
