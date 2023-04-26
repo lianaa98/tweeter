@@ -30,6 +30,12 @@ function createTweetElement(tweetObj) {
   const content = tweetObj.content.text;
   const contentTime = tweetObj.created_at;
 
+  function escape(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   const markup = `<article>
     <div class="tweet-account">
       <img alt="profile-picture" src=${userAvatar}>
@@ -38,7 +44,7 @@ function createTweetElement(tweetObj) {
         </div>
         <span class="account-id">${userID}</span>
     </div>
-    <div class="tweet-text">${content}</div>
+    <div class="tweet-text">${escape(content)}</div>
     <div class="tweet-stat">
       <div class="timeago">${timeago.format(contentTime)}</div>
       <div class="icons">
@@ -48,8 +54,6 @@ function createTweetElement(tweetObj) {
       </div>
     </div>
   </article>`;
-
-
 
   return markup;
 }
