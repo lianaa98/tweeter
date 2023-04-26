@@ -5,6 +5,10 @@ article {
   color: #3a3b43;
 }
 
+article:hover {
+  box-shadow: #B1B7D1 5px 5px, #b1b7d190 10px 10px
+}
+
 .all-tweets {
   display: flex;
   flex-direction: column;
@@ -43,8 +47,4 @@ article {
 
 .icons > i {
   padding-right: 0.3em;
-}
-
-.box {
-  box-shadow: #B1B7D1 5px 5px, #b1b7d190 10px 10px
 }

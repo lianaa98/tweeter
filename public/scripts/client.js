@@ -7,11 +7,10 @@ $(document).ready(function() {
       url: "/tweets/",
       data: $(this).serialize(),
     }).done(function() {
-      $(".all-tweets").empty();
       loadTweets();
     });
-      event.preventDefault();
-    });
+    event.preventDefault();
+  });
 });
 
 
@@ -46,24 +45,8 @@ function createTweetElement(tweetObj) {
 }
 
 function renderTweets(tweets) {
-
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-
-    // box-shadow script
-    $("article").hover(function() {
-      $(this).addClass("box");
-    }, function() {
-      $(this).removeClass("box");
-    });
-
-    // click-icons script
-    const $icon = $(".icons").children().each(function() {
-      $(this).on("click", function() {
-        $(this).toggleClass("fas");
-      });
-    });
-
+  for (let i = tweets.length - 1; i >= 0; i--) {
+    const $tweet = createTweetElement(tweets[i]);
     $(".all-tweets").append($tweet);
   }
 }
@@ -72,8 +55,15 @@ function loadTweets() {
   console.log("loading tweets...");
   $.ajax("/tweets/", { method: "GET" })
     .then(function(tweets) {
-      console.log(tweets);
+
+      $(".all-tweets").empty();
       renderTweets(tweets);
+
+      $(".icons").children().each(function() {
+        $(this).on("click", function() {
+          $(this).toggleClass("fas");
+        });
+      });
     }
     );
 }
