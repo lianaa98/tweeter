@@ -22,6 +22,7 @@
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   <script type="text/javascript" src="/scripts/box-shadow.js"></script>
   <script type="text/javascript" src="/scripts/icons.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,46 +53,23 @@
     </div>
     <br>
     <div>
-      <h2>Your Name</h2>
+      <h2 id="name">Your Name</h2>
     </div>
   </header>
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
       <h2>Compose Tweet</h2>
-      <form action="/tweets" method="POST">
+      <form id="tweet-form" action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
-          <button type="submit">Tweet</button>
+          <button id="tweet-button" type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
     </section>
     <section class="all-tweets">
-      <article>
-      <div class="tweet-account">
-        <img alt="profile-picture">
-        <div>
-          <span>Name</span>
-        </div>
-        <span class="account-id">@MrName</span>
-      </div>
-      <div class="tweet-text">Hello World!</div>
-      <div class="tweet-stat">
-        <div class="date">10 days ago</div> 
-        <div class="icons">
-<i class="fa-regular fa-heart"></i>
-<i class="fa-solid fa-retweet"></i>
-<i class="fa-regular fa-flag"></i>
-        </div>
-      </div>
-    </article>
-
-
-
-
-
     </section>
 
   </main>
