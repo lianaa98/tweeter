@@ -15,8 +15,8 @@
 
 .new-tweet > form > label {
   color: #3a3b43;
-  font-size: 0.8em;
-
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 #tweet-text {
