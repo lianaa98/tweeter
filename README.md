@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This is a student project at Lighthouse Labs. I cloned the starter code, built upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills, as well as my Node, Express back-end skills.
+This is my student project at Lighthouse Labs. I cloned the starter code, built upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills, as well as my Node, Express back-end skills.
 
 ## Screenshots
 !["landscape view"](https://github.com/lianaa98/tweeter/blob/master/docs/landscape.png?raw=true)
